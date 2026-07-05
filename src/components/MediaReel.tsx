@@ -353,7 +353,7 @@ function MediaCard({
           loop
           muted
           playsInline
-          preload="metadata"
+          preload="none"
           onError={() => setHasError(true)}
           onLoadedData={() => setLoaded(true)}
           style={{

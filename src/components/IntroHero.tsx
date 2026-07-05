@@ -1,5 +1,6 @@
 "use client";
 import { useEffect, useRef } from 'react'
+import IntroBanner from './IntroBanner'
 
 /**
  * IntroHero — tela de abertura (splash) da v3.
@@ -109,18 +110,11 @@ export default function IntroHero() {
           justifyContent: 'center',
           padding: '0 32px',
           transformOrigin: 'center center',
-          willChange: 'transform, opacity',
         }}
       >
-        <img
-          src="/logos/intro-wordmark.svg"
-          alt="Yarden Lab — Marketing strategy, Branding & AI"
+        <IntroBanner
           className="intro-wordmark"
-          style={{
-            width: 'min(480px, 78vw)',
-            height: 'auto',
-            display: 'block',
-          }}
+          style={{ width: 'min(480px, 78vw)', display: 'block' }}
         />
       </div>
 
@@ -154,9 +148,10 @@ export default function IntroHero() {
         .intro-wordmark {
           animation: introWordmarkIn 1.1s cubic-bezier(0.25,0.46,0.45,0.94) both;
         }
+        /* fade puro (sem transform) — evita layer cacheado que borraria no zoom */
         @keyframes introWordmarkIn {
-          from { opacity: 0; transform: translateY(24px); }
-          to   { opacity: 1; transform: translateY(0); }
+          from { opacity: 0; }
+          to   { opacity: 1; }
         }
         .intro-hint-arrow {
           animation: introHintBounce 1.8s ease-in-out infinite;

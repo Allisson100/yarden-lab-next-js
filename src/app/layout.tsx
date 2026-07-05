@@ -83,7 +83,17 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR" suppressHydrationWarning>
-      <body suppressHydrationWarning>{children}</body>
+      <body suppressHydrationWarning>
+        {/* preload da fonte serif usada acima da dobra (hero) — reduz o flash */}
+        <link
+          rel="preload"
+          href="/fonts/BigCaslonFB-Regular.woff2"
+          as="font"
+          type="font/woff2"
+          crossOrigin="anonymous"
+        />
+        {children}
+      </body>
     </html>
   );
 }

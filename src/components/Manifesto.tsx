@@ -46,9 +46,10 @@ export default function Manifesto() {
               }}
             /> */}
             <img
-              // src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?w=900&auto=format&fit=crop&q=80"
-              src="/quem-somos.jpg"
+              src="/quem-somos.webp"
               alt="Espaço criativo Yarden Lab"
+              loading="lazy"
+              decoding="async"
               style={{
                 width: "100%",
                 // height: "580px",

@@ -24,6 +24,17 @@ const nextConfig: NextConfig = {
   reactStrictMode: true,
   // Esconde o header "X-Powered-By: Next.js"
   poweredByHeader: false,
+  // Otimização de imagem (webp/avif, responsivo, cache longo na CDN da Vercel)
+  images: {
+    formats: ["image/avif", "image/webp"],
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "durqlolzozhibydhetzy.supabase.co",
+        pathname: "/storage/v1/object/public/**",
+      },
+    ],
+  },
   async headers() {
     return [
       {

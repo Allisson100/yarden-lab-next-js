@@ -28,15 +28,6 @@
   font-display: swap;
 }
 
-/* ── Segoe UI Variable — texto corrido, UI, labels ────────────────── */
-@font-face {
-  font-family: "Segoe UI Variable";
-  src: url("/fonts/SegoeUIVF.ttf") format("truetype");
-  font-weight: 100 900;
-  font-style: normal;
-  font-display: swap;
-}
-
 :root {
   /* Paleta — apenas 4 cores */
   --espresso: #360f11;
@@ -45,7 +36,8 @@
   --dusk: #d8d5d2;
 
   --font-serif: "Big Caslon FB", Georgia, serif;
-  --font-sans: "Segoe UI Variable", system-ui, sans-serif;
+  --font-sans: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue",
+    Arial, sans-serif;
   --ease-luxury: cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 

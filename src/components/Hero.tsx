@@ -8,6 +8,7 @@ import {
   useInView,
   useReducedMotion,
 } from "framer-motion";
+import Image from "next/image";
 
 /* ════════════════════════════════════════════════════════════════════
    SERVIÇOS — giram em órbita 360° ao redor da frase E pulsam (frente/trás).
@@ -217,19 +218,21 @@ export default function Hero() {
         background: "var(--espresso)",
       }}
     >
-      {/* imagem de fundo */}
+      {/* imagem de fundo (LCP) — next/image com priority = preload, avif/webp, cache longo */}
       <motion.div
         aria-hidden
-        style={{
-          position: "absolute",
-          inset: 0,
-          backgroundImage: `url(${BG_URL})`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          scale: bgScale,
-          zIndex: 0,
-        }}
-      />
+        style={{ position: "absolute", inset: 0, scale: bgScale, zIndex: 0 }}
+      >
+        <Image
+          src={BG_URL}
+          alt=""
+          fill
+          priority
+          sizes="100vw"
+          quality={70}
+          style={{ objectFit: "cover", objectPosition: "center" }}
+        />
+      </motion.div>
       {/* scrim espresso */}
       <div
         aria-hidden
