@@ -1,6 +1,6 @@
 "use client";
 import { useRef } from "react";
-import { motion, useInView } from "framer-motion";
+import { m, useInView } from "framer-motion";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 40 },
@@ -27,7 +27,7 @@ export default function Manifesto() {
           className="manifesto-grid"
         >
           {/* Left — Image */}
-          <motion.div
+          <m.div
             variants={fadeUp}
             initial="hidden"
             animate={inView ? "visible" : "hidden"}
@@ -93,10 +93,10 @@ export default function Manifesto() {
                 Visão de marca
               </div>
             </div>
-          </motion.div>
+          </m.div>
 
           {/* Right — Text */}
-          <motion.div
+          <m.div
             variants={fadeUp}
             initial="hidden"
             animate={inView ? "visible" : "hidden"}
@@ -204,7 +204,7 @@ export default function Manifesto() {
                 />
               </svg>
             </a>
-          </motion.div>
+          </m.div>
         </div>
       </div>
 

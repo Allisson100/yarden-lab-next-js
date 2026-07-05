@@ -84,6 +84,12 @@ export default function RootLayout({
   return (
     <html lang="pt-BR" suppressHydrationWarning>
       <body suppressHydrationWarning>
+        {/* preconnect ao storage das imagens/vídeos (LCP + grid) — economiza o handshake */}
+        <link
+          rel="preconnect"
+          href="https://lipm23rsbosgzvrt.public.blob.vercel-storage.com"
+          crossOrigin="anonymous"
+        />
         {/* preload da fonte serif usada acima da dobra (hero) — reduz o flash */}
         <link
           rel="preload"

@@ -1,7 +1,7 @@
 "use client";
 import { useRef, useState, useLayoutEffect } from "react";
 import {
-  motion,
+  m,
   useScroll,
   useTransform,
   useTime,
@@ -74,7 +74,7 @@ function OrbitPulseWord({
   const zIndex = useTransform(od, (o) => (o > 0 ? 30 : 5));
 
   return (
-    <motion.div
+    <m.div
       style={{
         position: "absolute",
         left: "50%",
@@ -101,7 +101,7 @@ function OrbitPulseWord({
       >
         {item.label}
       </span>
-    </motion.div>
+    </m.div>
   );
 }
 
@@ -138,7 +138,7 @@ function FitPhrase({ show, maxWidth }) {
       ref={wrapRef}
       style={{ width: `${maxWidth}px`, maxWidth: "94vw", textAlign: "center" }}
     >
-      <motion.span
+      <m.span
         ref={elRef}
         initial={{ opacity: 0, scale: 0.92, filter: "blur(12px)" }}
         animate={show ? { opacity: 1, scale: 1, filter: "blur(0px)" } : {}}
@@ -159,7 +159,7 @@ function FitPhrase({ show, maxWidth }) {
         <span style={{ fontFamily: "var(--font-sans)", fontWeight: 300 }}>
           começou
         </span>
-      </motion.span>
+      </m.span>
     </div>
   );
 }
@@ -219,7 +219,7 @@ export default function Hero() {
       }}
     >
       {/* imagem de fundo (LCP) — next/image com priority = preload, avif/webp, cache longo */}
-      <motion.div
+      <m.div
         aria-hidden
         style={{ position: "absolute", inset: 0, scale: bgScale, zIndex: 0 }}
       >
@@ -233,7 +233,7 @@ export default function Hero() {
           quality={70}
           style={{ objectFit: "cover", objectPosition: "center" }}
         />
-      </motion.div>
+      </m.div>
       {/* scrim espresso */}
       <div
         aria-hidden
@@ -317,7 +317,7 @@ export default function Hero() {
               zIndex: 20,
             }}
           >
-            <motion.p
+            <m.p
               initial={{ opacity: 0, y: 12 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.7, delay: 0.2 }}
@@ -334,7 +334,7 @@ export default function Hero() {
               }}
             >
               Uma estratégia 360°
-            </motion.p>
+            </m.p>
             <FitPhrase show={inView} maxWidth={phraseW} />
           </div>
         </div>

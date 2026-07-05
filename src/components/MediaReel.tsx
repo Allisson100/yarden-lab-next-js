@@ -1,6 +1,6 @@
 "use client";
 import { useRef, useState, useEffect, useCallback } from "react";
-import { motion, useInView, AnimatePresence } from "framer-motion";
+import { m, useInView, AnimatePresence } from "framer-motion";
 
 /**
  * MediaReel — grade mista de fotos e vídeos.
@@ -444,7 +444,7 @@ function MediaCard({
           right: 20,
         }}
       >
-        <motion.div
+        <m.div
           animate={{ y: hovered ? -4 : 0 }}
           transition={{ duration: 0.28 }}
         >
@@ -474,7 +474,7 @@ function MediaCard({
           </p>
           <AnimatePresence>
             {hovered && (
-              <motion.p
+              <m.p
                 key="desc"
                 initial={{ opacity: 0, y: 5 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -490,10 +490,10 @@ function MediaCard({
                 }}
               >
                 {item.description}
-              </motion.p>
+              </m.p>
             )}
           </AnimatePresence>
-        </motion.div>
+        </m.div>
       </div>
 
       {/* Controles (só para vídeos carregados) */}
@@ -631,7 +631,7 @@ function Lightbox({ items, initialIdx, onClose }) {
   };
 
   return (
-    <motion.div
+    <m.div
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
@@ -659,7 +659,7 @@ function Lightbox({ items, initialIdx, onClose }) {
         }}
       >
         <AnimatePresence mode="wait">
-          <motion.div
+          <m.div
             key={idx}
             initial={{ opacity: 0, scale: 0.97 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -692,7 +692,7 @@ function Lightbox({ items, initialIdx, onClose }) {
                 }}
               />
             )}
-          </motion.div>
+          </m.div>
         </AnimatePresence>
 
         {/* Barra inferior */}
@@ -825,7 +825,7 @@ function Lightbox({ items, initialIdx, onClose }) {
           <path d="M18 6L6 18M6 6l12 12" />
         </svg>
       </button>
-    </motion.div>
+    </m.div>
   );
 }
 
@@ -927,7 +927,7 @@ export default function MediaReel() {
 
       <div className="container">
         {/* ── Header ────────────────────────────────────────────── */}
-        <motion.div
+        <m.div
           className="mr-header"
           initial={{ opacity: 0, y: 28 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
@@ -959,14 +959,14 @@ export default function MediaReel() {
               <em style={{ fontStyle: "normal" }}>e posiciona.</em>
             </h2>
           </div>
-        </motion.div>
+        </m.div>
       </div>
 
       {/* ── Grid (fora do container: full-bleed no mobile) ───────── */}
       <div className="mr-grid-wrap">
         <div className="mr-grid">
           {MEDIA.map((item, idx) => (
-            <motion.div
+            <m.div
               key={item.id}
               className="mr-cell"
               initial={{ opacity: 0, y: 24 }}
@@ -978,7 +978,7 @@ export default function MediaReel() {
               }}
             >
               <MediaCard {...cardProps(idx, { featured: idx === 0 })} />
-            </motion.div>
+            </m.div>
           ))}
         </div>
       </div>

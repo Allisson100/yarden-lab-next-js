@@ -1,6 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { m, AnimatePresence } from "framer-motion";
 import YardenLogo from "./YardenLogo";
 
 // Em ordem das seções da página
@@ -42,7 +42,7 @@ export default function Navbar() {
 
   return (
     <>
-      <motion.nav
+      <m.nav
         className="navbar-yarden"
         initial={{ y: -80, opacity: 0 }}
         animate={{
@@ -142,12 +142,12 @@ export default function Navbar() {
             />
           ))}
         </button>
-      </motion.nav>
+      </m.nav>
 
       {/* Mobile Menu */}
       <AnimatePresence>
         {menuOpen && (
-          <motion.div
+          <m.div
             initial={{ opacity: 0, y: -16 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -16 }}
@@ -166,7 +166,7 @@ export default function Navbar() {
             }}
           >
             {links.map((link, i) => (
-              <motion.a
+              <m.a
                 key={link.href}
                 href={link.href}
                 onClick={() => setMenuOpen(false)}
@@ -183,9 +183,9 @@ export default function Navbar() {
                 }}
               >
                 {link.label}
-              </motion.a>
+              </m.a>
             ))}
-            <motion.a
+            <m.a
               href={`https://wa.me/5511936239317?text=${encodeURIComponent("Olá! Vim pelo site da Yarden Lab e gostaria de conversar.")}`}
               target="_blank"
               rel="noopener noreferrer"
@@ -197,8 +197,8 @@ export default function Navbar() {
               style={{ marginTop: "16px" }}
             >
               Fale Conosco
-            </motion.a>
-          </motion.div>
+            </m.a>
+          </m.div>
         )}
       </AnimatePresence>
     </>

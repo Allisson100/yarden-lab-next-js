@@ -10,6 +10,7 @@ import Manifesto from "@/components/Manifesto";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import FloatingWhatsApp from "@/components/FloatingWhatsApp";
+import MotionProvider from "@/components/MotionProvider";
 
 /* Dados estruturados (JSON-LD) — ajuda o Google a entender a marca */
 const jsonLd = {
@@ -36,27 +37,29 @@ export default function Home() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
-      {/* Tela de abertura — fixa no fundo, revelada ao rolar */}
-      <IntroHero />
+      <MotionProvider>
+        {/* Tela de abertura — fixa no fundo, revelada ao rolar */}
+        <IntroHero />
 
-      {/* Site real — desliza por cima do intro ao rolar */}
-      <div className="site-shell">
-        <Navbar />
-        <main>
-          <Hero />
-          <Mission />
-          <Process />
-          <MediaReel />
-          <AISection />
-          <PlansSection />
-          <Manifesto />
-          <Contact />
-        </main>
-        <Footer />
-      </div>
+        {/* Site real — desliza por cima do intro ao rolar */}
+        <div className="site-shell">
+          <Navbar />
+          <main>
+            <Hero />
+            <Mission />
+            <Process />
+            <MediaReel />
+            <AISection />
+            <PlansSection />
+            <Manifesto />
+            <Contact />
+          </main>
+          <Footer />
+        </div>
 
-      {/* Botão flutuante de WhatsApp */}
-      <FloatingWhatsApp />
+        {/* Botão flutuante de WhatsApp */}
+        <FloatingWhatsApp />
+      </MotionProvider>
     </>
   );
 }

@@ -1,6 +1,6 @@
 "use client";
 import { useRef, type CSSProperties } from "react";
-import { motion, useInView } from "framer-motion";
+import { m, useInView } from "framer-motion";
 
 /* Seção logo abaixo do Hero — o manifesto/missão, com respiro próprio.
    Texto centralizado e justificado. */
@@ -27,7 +27,7 @@ export default function Mission() {
       }}
     >
       <div className="container">
-        <motion.div
+        <m.div
           ref={ref}
           initial={{ opacity: 0, y: 30 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
@@ -56,7 +56,7 @@ export default function Mission() {
             No fim, o que nos move é simples: dar à sua marca o valor que ela
             merece e trazer mais clientes qualificados para perto.
           </p>
-        </motion.div>
+        </m.div>
       </div>
     </section>
   );

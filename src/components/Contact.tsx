@@ -1,6 +1,6 @@
 "use client";
 import { useRef } from "react";
-import { motion, useInView } from "framer-motion";
+import { m, useInView } from "framer-motion";
 
 const WA_NUMBER = "5511936239317";
 const waHref = `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(
@@ -133,7 +133,7 @@ export default function Contact() {
           className="contact-grid"
         >
           {/* Left */}
-          <motion.div
+          <m.div
             initial={{ opacity: 0, x: -40 }}
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.9 }}
@@ -231,10 +231,10 @@ export default function Contact() {
                 </a>
               ))}
             </div>
-          </motion.div>
+          </m.div>
 
           {/* Right — CTA WhatsApp */}
-          <motion.div
+          <m.div
             initial={{ opacity: 0, x: 40 }}
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.9, delay: 0.15 }}
@@ -333,7 +333,7 @@ export default function Contact() {
               <WhatsAppIcon size={18} />
               Falar no WhatsApp
             </a>
-          </motion.div>
+          </m.div>
         </div>
       </div>
 

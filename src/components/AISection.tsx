@@ -1,6 +1,6 @@
 "use client";
 import { useRef, useState, useCallback, type CSSProperties } from "react";
-import { motion, useInView, AnimatePresence } from "framer-motion";
+import { m, useInView, AnimatePresence } from "framer-motion";
 
 const PLAN_CATEGORIES = {
   "Diagnóstico Yarden": "Entrada",
@@ -78,7 +78,7 @@ function BrandSymbolPanel({ phase }) {
       }}
     >
       {/* Symbol — oversized, bleeds in all directions */}
-      <motion.div
+      <m.div
         animate={
           isActive
             ? { scale: [1, 1.05, 1], opacity: [0.5, 0.92, 0.5] }
@@ -103,7 +103,7 @@ function BrandSymbolPanel({ phase }) {
         }}
       >
         {/* Wrapper de rotação — gira enquanto analisa (só desktop, painel já oculto no mobile) */}
-        <motion.div
+        <m.div
           animate={isActive ? { rotate: 360 } : { rotate: 0 }}
           transition={
             isActive
@@ -124,11 +124,11 @@ function BrandSymbolPanel({ phase }) {
               transition: "opacity 0.8s ease",
             }}
           />
-        </motion.div>
-      </motion.div>
+        </m.div>
+      </m.div>
 
       {/* Subtle gold glow that pulses during analysis */}
-      <motion.div
+      <m.div
         animate={
           isActive
             ? { opacity: [0.04, 0.14, 0.04] }
@@ -246,7 +246,7 @@ function StreamText({ text, streaming }) {
           >
             {renderInline(line)}
             {streaming && isLast && (
-              <motion.span
+              <m.span
                 animate={{ opacity: [1, 0, 1] }}
                 transition={{ duration: 0.85, repeat: Infinity }}
                 style={{
@@ -619,7 +619,7 @@ export default function AISection() {
     >
       <div className="container" ref={ref}>
         {/* ── Header ─────────────────────────────────────────── */}
-        <motion.div
+        <m.div
           initial={{ opacity: 0, y: 32 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8 }}
@@ -655,7 +655,7 @@ export default function AISection() {
             Análise real gerada por IA — diagnóstico honesto, pontos críticos e
             plano recomendado. Gratuita e em menos de 60 segundos.
           </p>
-        </motion.div>
+        </m.div>
 
         {/* ── Grid ─────────────────────────────────────────────── */}
         <div
@@ -668,17 +668,17 @@ export default function AISection() {
           className="ai-grid"
         >
           {/* Left — dimensions panel */}
-          <motion.div
+          <m.div
             initial={{ opacity: 0, x: -32 }}
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.9, delay: 0.2 }}
             style={{ height: `${PANEL_HEIGHT}px`, overflow: "hidden" }}
           >
             <BrandSymbolPanel phase={phase} />
-          </motion.div>
+          </m.div>
 
           {/* Right — form / result */}
-          <motion.div
+          <m.div
             ref={panelRef}
             className={`ai-right-panel${phase === "streaming" || phase === "done" ? " ai-scroll-result" : ""}`}
             initial={{ opacity: 0, x: 32 }}
@@ -724,7 +724,7 @@ export default function AISection() {
                 <div
                   style={{ display: "flex", alignItems: "center", gap: "7px" }}
                 >
-                  <motion.div
+                  <m.div
                     animate={
                       phase === "loading" || phase === "streaming"
                         ? { opacity: [0.3, 1, 0.3] }
@@ -783,7 +783,7 @@ export default function AISection() {
             <AnimatePresence mode="wait">
               {/* FORM */}
               {phase === "form" && (
-                <motion.div
+                <m.div
                   key="form"
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
@@ -981,12 +981,12 @@ export default function AISection() {
                     </svg>
                     Analisar minha marca
                   </button>
-                </motion.div>
+                </m.div>
               )}
 
               {/* LOADING */}
               {phase === "loading" && (
-                <motion.div
+                <m.div
                   key="loading"
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
@@ -1009,7 +1009,7 @@ export default function AISection() {
                       background: "rgba(243,235,226,0.06)",
                     }}
                   >
-                    <motion.div
+                    <m.div
                       animate={{ x: ["-100%", "200%"] }}
                       transition={{
                         duration: 1.5,
@@ -1025,7 +1025,7 @@ export default function AISection() {
                     />
                   </div>
                   <div style={{ textAlign: "center" }}>
-                    <motion.p
+                    <m.p
                       animate={{ opacity: [0.4, 1, 0.4] }}
                       transition={{ duration: 1.3, repeat: Infinity }}
                       style={{
@@ -1037,7 +1037,7 @@ export default function AISection() {
                       }}
                     >
                       {loadingStep}
-                    </motion.p>
+                    </m.p>
                     <p
                       style={{
                         color: "rgba(243,235,226,0.2)",
@@ -1057,7 +1057,7 @@ export default function AISection() {
                       background: "rgba(243,235,226,0.04)",
                     }}
                   >
-                    <motion.div
+                    <m.div
                       animate={{ x: ["200%", "-100%"] }}
                       transition={{
                         duration: 1.8,
@@ -1073,12 +1073,12 @@ export default function AISection() {
                       }}
                     />
                   </div>
-                </motion.div>
+                </m.div>
               )}
 
               {/* STREAMING / DONE */}
               {(phase === "streaming" || phase === "done") && (
-                <motion.div
+                <m.div
                   key="result"
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
@@ -1107,7 +1107,7 @@ export default function AISection() {
                         gap: "8px",
                       }}
                     >
-                      <motion.div
+                      <m.div
                         animate={
                           phase === "streaming"
                             ? { opacity: [0.4, 1, 0.4] }
@@ -1174,7 +1174,7 @@ export default function AISection() {
                     }}
                   >
                     {/* Stable container — only fades in once; text grows in batches every 120 ms */}
-                    <motion.div
+                    <m.div
                       key="stream-result"
                       initial={{ opacity: 0, y: 6 }}
                       animate={{ opacity: 1, y: 0 }}
@@ -1184,13 +1184,13 @@ export default function AISection() {
                         text={displayedText}
                         streaming={phase === "streaming"}
                       />
-                    </motion.div>
+                    </m.div>
                   </div>
 
                   {/* CTA after done */}
                   <AnimatePresence>
                     {phase === "done" && planName && (
-                      <motion.div
+                      <m.div
                         initial={{ opacity: 0, y: 10 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.45, delay: 0.25 }}
@@ -1275,15 +1275,15 @@ export default function AISection() {
                             </svg>
                           </button>
                         </div>
-                      </motion.div>
+                      </m.div>
                     )}
                   </AnimatePresence>
-                </motion.div>
+                </m.div>
               )}
 
               {/* ERROR */}
               {phase === "error" && (
-                <motion.div
+                <m.div
                   key="error"
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
@@ -1342,14 +1342,14 @@ export default function AISection() {
                   >
                     Tentar novamente
                   </button>
-                </motion.div>
+                </m.div>
               )}
             </AnimatePresence>
-          </motion.div>
+          </m.div>
         </div>
 
         {/* ── AI features strip ────────────────────────────────── */}
-        {/* <motion.div
+        {/* <m.div
           initial={{ opacity: 0, y: 32 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, delay: 0.5 }}
@@ -1424,7 +1424,7 @@ export default function AISection() {
               </p>
             </div>
           ))}
-        </motion.div> */}
+        </m.div> */}
       </div>
 
       <style>{`

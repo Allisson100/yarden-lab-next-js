@@ -1,6 +1,6 @@
 "use client";
 import { useRef } from 'react'
-import { motion, useInView } from 'framer-motion'
+import { m, useInView } from 'framer-motion'
 
 const steps = [
   {
@@ -59,7 +59,7 @@ function River({ d, kind, inView }) {
       style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', overflow: 'visible', zIndex: 0, pointerEvents: 'none' }}
     >
       <path d={d} fill="none" stroke="#682D1B" strokeOpacity="0.1" strokeWidth="11" strokeLinecap="round" vectorEffect="non-scaling-stroke" />
-      <motion.path
+      <m.path
         d={d}
         fill="none"
         stroke="#682D1B"
@@ -83,7 +83,7 @@ export default function Process() {
     <section id="method" style={{ background: 'var(--cream)', padding: 'clamp(44px, 6vw, 80px) 0 clamp(48px, 6vw, 88px)', overflow: 'hidden' }}>
       <div className="container" ref={ref}>
         {/* Header */}
-        <motion.div
+        <m.div
           initial={{ opacity: 0, y: 32 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8 }}
@@ -106,7 +106,7 @@ export default function Process() {
           {/* <p style={{ color: 'var(--sienna)', fontSize: '16px', fontStyle: 'normal', fontFamily: 'var(--font-serif)', marginTop: '16px', lineHeight: 1.5 }}>
             Como o rio Jordão, nosso método tem um curso — da nascente à foz.
           </p> */}
-        </motion.div>
+        </m.div>
 
         {/* ── Curso do rio: os marcos seguem o traçado serpenteando ── */}
         <div className="river-flow">
@@ -117,7 +117,7 @@ export default function Process() {
             const a = ANCHORS[i]
             const isLeft = a.side === 'left'
             return (
-              <motion.div
+              <m.div
                 key={step.num}
                 className={`river-step ${isLeft ? 'is-left' : 'is-right'}`}
                 initial={{ opacity: 0, y: 22 }}
@@ -163,7 +163,7 @@ export default function Process() {
                     {step.duration}
                   </div> */}
                 </div>
-              </motion.div>
+              </m.div>
             )
           })}
         </div>

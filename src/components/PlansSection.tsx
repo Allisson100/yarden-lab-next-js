@@ -1,6 +1,6 @@
 "use client";
 import { useRef, useState, useEffect } from "react";
-import { motion, useInView } from "framer-motion";
+import { m, useInView } from "framer-motion";
 
 const WA = "5511936239317";
 const waLink = (msg) => `https://wa.me/${WA}?text=${encodeURIComponent(msg)}`;
@@ -121,7 +121,7 @@ const Check = () => (
 function PlanCard({ card, index, inView, highlighted }) {
   const feat = card.featured;
   return (
-    <motion.div
+    <m.div
       id={`plan-card-${card.category.toLowerCase()}`}
       className="plan3-card"
       initial={{ opacity: 0, y: 24 }}
@@ -298,7 +298,7 @@ function PlanCard({ card, index, inView, highlighted }) {
       >
         {card.cta}
       </a>
-    </motion.div>
+    </m.div>
   );
 }
 
@@ -336,7 +336,7 @@ export default function PlansSection() {
     >
       <div className="container" ref={ref}>
         {/* Cabeçalho */}
-        <motion.div
+        <m.div
           initial={{ opacity: 0, y: 28 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.75 }}
@@ -369,7 +369,7 @@ export default function PlansSection() {
           >
             3 caminhos. Comece pelo ponto certo para o momento da sua marca.
           </p>
-        </motion.div>
+        </m.div>
 
         {/* Grade de 3 cards — subgrid p/ alinhar descrição, tags, checklist e botão */}
         <div
