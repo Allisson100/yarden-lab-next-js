@@ -111,7 +111,7 @@ export default function Contact() {
         style={{
           position: "absolute",
           inset: 0,
-          backgroundImage: `url("https://durqlolzozhibydhetzy.supabase.co/storage/v1/object/public/YardenLabFiles/foto-7.jpg?w=1920&auto=format&fit=crop&q=60")`,
+          backgroundImage: `url("https://lipm23rsbosgzvrt.public.blob.vercel-storage.com/foto-7.jpg?w=1920&auto=format&fit=crop&q=60")`,
           backgroundSize: "cover",
           backgroundPosition: "center",
           opacity: 0.5,

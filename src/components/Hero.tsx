@@ -27,7 +27,7 @@ const SERVICES = [
 ];
 
 const BG_URL =
-  "https://durqlolzozhibydhetzy.supabase.co/storage/v1/object/public/YardenLabFiles/fundo_hero.jpeg";
+  "https://lipm23rsbosgzvrt.public.blob.vercel-storage.com/fundo_hero.jpeg";
 
 const toRad = (d) => (d * Math.PI) / 180;
 
@@ -228,6 +228,7 @@ export default function Hero() {
           alt=""
           fill
           priority
+          fetchPriority="high"
           sizes="100vw"
           quality={70}
           style={{ objectFit: "cover", objectPosition: "center" }}

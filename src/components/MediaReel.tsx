@@ -44,7 +44,7 @@ const MEDIA = [
   {
     id: "02",
     type: "photo",
-    src: "https://lipm23rsbosgzvrt.public.blob.vercel-storage.com/foto-3.jpg",
+    src: "https://lipm23rsbosgzvrt.public.blob.vercel-storage.com/foto-3.webp",
     objPos: "center 50%",
     title: "Branding Editorial",
     category: "Branding",
@@ -55,7 +55,7 @@ const MEDIA = [
   {
     id: "03",
     type: "photo",
-    src: "https://lipm23rsbosgzvrt.public.blob.vercel-storage.com/foto-6.jpg",
+    src: "https://lipm23rsbosgzvrt.public.blob.vercel-storage.com/foto-6.webp",
     objPos: "center 22%",
     title: "Posicionamento",
     category: "Posicionamento",
@@ -66,7 +66,7 @@ const MEDIA = [
   {
     id: "04",
     type: "photo",
-    src: "https://lipm23rsbosgzvrt.public.blob.vercel-storage.com/foto-1.jpg",
+    src: "https://lipm23rsbosgzvrt.public.blob.vercel-storage.com/foto-1.webp",
     objPos: "center 22%",
     title: "Autenticidade",
     category: "Autenticidade",
@@ -77,7 +77,7 @@ const MEDIA = [
   {
     id: "06",
     type: "photo",
-    src: "https://lipm23rsbosgzvrt.public.blob.vercel-storage.com/foto-4.jpg",
+    src: "https://lipm23rsbosgzvrt.public.blob.vercel-storage.com/foto-4.webp",
     title: "Tecnologia",
     category: "Inteligência",
     quote: "Onde o dado vira direção.",
@@ -100,8 +100,8 @@ const MEDIA = [
   {
     id: "07",
     type: "photo",
-    src: "https://lipm23rsbosgzvrt.public.blob.vercel-storage.com/foto-2.jpg",
-    objPos: "center 25%", // ← ajuste aqui: menor % sobe o enquadramento, maior % desce
+    src: "https://lipm23rsbosgzvrt.public.blob.vercel-storage.com/foto-2.webp",
+    objPos: "center 0%", // ← ajuste aqui: menor % sobe o enquadramento, maior % desce
     title: "Presença Digital",
     category: "Conteúdo",
     quote: "Conteúdo que nasce de estratégia.",

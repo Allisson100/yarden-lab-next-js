@@ -24,14 +24,23 @@ const nextConfig: NextConfig = {
   reactStrictMode: true,
   // Esconde o header "X-Powered-By: Next.js"
   poweredByHeader: false,
+  // Embute o CSS crítico no HTML → elimina o request de CSS que bloqueia o render
+  experimental: {
+    inlineCss: true,
+  },
   // Otimização de imagem (webp/avif, responsivo, cache longo na CDN da Vercel)
   images: {
     formats: ["image/avif", "image/webp"],
+    qualities: [70, 75],
     remotePatterns: [
       {
         protocol: "https",
         hostname: "durqlolzozhibydhetzy.supabase.co",
         pathname: "/storage/v1/object/public/**",
+      },
+      {
+        protocol: "https",
+        hostname: "lipm23rsbosgzvrt.public.blob.vercel-storage.com",
       },
     ],
   },

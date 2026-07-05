@@ -4,7 +4,7 @@ import "./globals.css";
 /* Domínio de produção — ajuste se o domínio final for outro */
 const SITE_URL = "https://yardenlab.com";
 const OG_IMAGE =
-  "https://durqlolzozhibydhetzy.supabase.co/storage/v1/object/public/YardenLabFiles/foto-1.jpg";
+  "https://lipm23rsbosgzvrt.public.blob.vercel-storage.com/foto-1.webp";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
