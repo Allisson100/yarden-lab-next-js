@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Camada_2" data-name="Camada 2" xmlns="http://www.w3.org/2000/svg" viewBox="-5 -10 600 406">
+  <defs>
+    <style>
+      .cls-1 {
+        letter-spacing: -.09em;
+      }
+
+      .cls-2 {
+        font-family: SegoeUIVariable, 'Segoe UI Variable';
+        font-size: 22.14px;
+        font-variation-settings: 'wght' 400, 'opsz' 10;
+      }
+
+      .cls-2, .cls-3, .cls-4 {
+        fill: #360f11;
+      }
+
+      .cls-3 {
+        font-family: BigCaslonFB-Italic, 'Big Caslon CC';
+        font-style: italic;
+      }
+
+      .cls-3, .cls-4 {
+        font-size: 187.55px;
+      }
+
+      .cls-5 {
+        letter-spacing: -.02em;
+      }
+
+      .cls-4 {
+        font-family: NHaasGroteskDSPro-55Rg, 'Neue Haas Grotesk Display Pro';
+      }
+    </style>
+  </defs>
+  <g id="Camada_1-2" data-name="Camada 1">
+    <g>
+      <text class="cls-4" transform="translate(0 160.83)"><tspan class="cls-1" x="0" y="0">Y</tspan><tspan x="100.53" y="0">a</tspan><tspan class="cls-5" x="196.18" y="0">r</tspan><tspan x="256.76" y="0">den</tspan></text>
+      <text class="cls-3" transform="translate(349.18 346.87)"><tspan x="0" y="0">lab</tspan></text>
+      <text class="cls-2" transform="translate(51.11 283.18)"><tspan x="0" y="0">Marketing strategy, </tspan><tspan x="0" y="26.57">Branding &amp; AI</tspan></text>
+    </g>
+  </g>
+</svg>
